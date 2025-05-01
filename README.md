@@ -25,3 +25,15 @@ probar
 uvicorn whisper_server:app --host 0.0.0.0 --port 8000
 ```
 
+Prueba con curl una ves que anda ok
+```bash
+curl -F "audio=@salida.mp3" -F "nombre_salida=salida" http://xeon:8000/transcribir/ -o mi_subtitulo.srt
+```
+
+con esto se optiene el resultado  de la transcripcion 
+
+
+ffmpeg -i video.mp4 -i subtitulos.srt -c copy -c:s mov_text video_con_subs.mp4
+
+
+ffmpeg -i video.mp4 -vf subtitles=subtitulos.srt video_subtitulado.mp4

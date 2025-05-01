@@ -11,6 +11,8 @@ RUN python -m venv venv
 # Establece el entorno para usar el Python del virtualenv
 ENV PATH="/app/venv/bin:$PATH"
 
+RUN pip install uvicorn
+
 # Expone puerto
 EXPOSE 8000
 
